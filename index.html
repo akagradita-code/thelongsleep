@@ -4,6 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>THE LONG SLEEP</title>
+<!-- 수정: 공유 미리보기 -->
+<meta name="description" content="감염병 이후의 사막. 규칙이 남은 셸터 HAVEN과 규칙을 버린 협곡 ROSE GARDEN.">
+<meta property="og:title" content="THE LONG SLEEP">
+<meta property="og:description" content="당신은 어느 쪽 불빛으로 걸어갈 것인가.">
+<!-- 1200x630 전용 이미지를 만들어 교체하면 트위터 카드에서 잘리지 않습니다 -->
+<meta property="og:image" content="https://thelongsleep.vercel.app/assets/image_07_e0f162616d.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="320">
+<meta property="og:url" content="https://thelongsleep.vercel.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,7 +47,7 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(54px + env(safe-area-inset-t
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:"Pretendard Variable",Pretendard,"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI",Roboto,sans-serif;
-  font-size:14.5px;line-height:1.85;letter-spacing:-.005em;
+  font-size:13.5px;line-height:1.85;letter-spacing:-.005em;
   -webkit-font-smoothing:antialiased;
 }
 img{max-width:100%}
@@ -44,13 +55,12 @@ h1,h2,h3{margin:0;font-weight:500;line-height:1.3}
 p{margin:0 0 1.05em}
 a{color:inherit}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-.mono{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--ink-soft)}
 
 /* nav */
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(244,236,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;gap:16px;align-items:center;height:54px;overflow-x:auto;scrollbar-width:none}
 nav .wrap::-webkit-scrollbar{display:none}
-nav a{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav a{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--clay)}
 nav .mark{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:13px;letter-spacing:.18em;color:var(--ink);margin-right:4px}
 
@@ -59,7 +69,7 @@ header{position:relative;min-height:62vh;display:flex;align-items:flex-end;paddi
   background:radial-gradient(85% 55% at 22% 98%, rgba(140,178,169,.3), transparent 62%),
              radial-gradient(80% 50% at 84% 94%, rgba(198,86,72,.34), transparent 60%),
              linear-gradient(#1c1613 0%, #2a201b 60%, #3b2b22 100%)}
-header::after{content:"";position:absolute;left:0;right:0;bottom:30%;height:1px;background:linear-gradient(90deg,transparent,rgba(242,231,222,.3),transparent)}
+/* 수정: 히어로 가로선 제거 */
 .glow{position:absolute;bottom:21%;width:min(170px,30vw);height:min(170px,30vw);border-radius:50%;filter:blur(36px);opacity:.5}
 .glow.a{left:12%;background:#8fb3aa;animation:pulse 7s ease-in-out infinite}
 .glow.b{right:10%;background:#c8564a;animation:pulse 9s ease-in-out infinite .8s}
@@ -71,10 +81,10 @@ header .wrap{position:relative;z-index:2}
 .subline{color:rgba(242,231,222,.72);font-size:13.5px;max-width:27em}
 
 /* sections */
-section{padding:66px 0 74px;border-top:1px solid var(--line-soft)}
+section{padding:46px 0 52px;border-top:1px solid var(--line-soft)}
 @media(min-width:620px){
-  #quiz{padding-bottom:38px}
-  #profile{padding-top:38px;border-top-color:rgba(51,39,31,.08)}
+  #quiz{padding-bottom:30px}
+  #profile{padding-top:30px;border-top-color:rgba(51,39,31,.1)}
 }
 #quiz{background:var(--paper-2)}
 #profile{background:var(--paper)}
@@ -85,31 +95,30 @@ section{padding:66px 0 74px;border-top:1px solid var(--line-soft)}
 .kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.26em;color:var(--ink-soft);margin-bottom:10px}
 #signal .kicker{color:rgba(234,223,214,.6)}
 .h2{font-size:clamp(24px,6vw,33px);font-weight:600;letter-spacing:-.02em;margin-bottom:9px}
-.lead{color:var(--ink-soft);max-width:32em;margin-bottom:32px;font-size:14.5px}
+.lead{color:var(--ink-soft);max-width:32em;margin-bottom:32px;font-size:13.5px}
 #signal .lead{color:rgba(234,223,214,.7)}
 section p{max-width:34em}
 
 /* audio */
-.player{display:flex;align-items:center;gap:11px;flex-wrap:wrap;border:1px solid var(--line);border-radius:2px;padding:10px 12px;margin-bottom:32px;background:rgba(255,255,255,.45)}
-.player button{width:32px;height:32px;flex:none;border-radius:50%;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:12px;line-height:1;display:grid;place-items:center;transition:background .2s}
+.player{display:flex;align-items:center;gap:11px;flex-wrap:wrap;border:1px solid var(--line);border-radius:2px;padding:10px 12px;margin-bottom:22px;background:rgba(255,255,255,.45)}
+.player button{width:32px;height:32px;flex:none;border-radius:50%;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:11px;line-height:1;display:grid;place-items:center;transition:background .2s}
 .player button:hover:not(:disabled){background:var(--paper-2)}
 .player button:disabled{opacity:.4;cursor:default}
 .player .meta{flex:1 1 150px;min-width:0}
-.player .tname{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.player .thint{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;color:var(--ink-soft)}
+.player .tname{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player .thint{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft)}
 .player input[type=range]{flex:1 1 140px;min-width:100px;accent-color:var(--clay);height:3px}
-.player .time{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-soft);flex:none}
-.player .load{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.06em;cursor:pointer;border:1px solid var(--line);border-radius:2px;padding:6px 9px;color:var(--ink-soft);width:auto;height:auto;background:#fff}
+.player .time{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);flex:none}
+.player .load{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;cursor:pointer;border:1px solid var(--line);border-radius:2px;padding:6px 9px;color:var(--ink-soft);width:auto;height:auto;background:#fff}
 .player .load:hover{color:var(--ink)}
 
 /* quiz */
-.quiz-card{border:1px solid var(--line);background:#fbf6f1;padding:24px 20px 20px}
-.qcount{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:6px}
+.qcount{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:6px}
 .qbar{height:2px;background:rgba(51,39,31,.14);margin-bottom:20px}
 .qbar i{display:block;height:100%;background:var(--clay);width:0;transition:width .35s ease}
-.qtext{font-size:18px;line-height:1.55;margin-bottom:20px;font-weight:500}
+.qtext{font-size:16px;line-height:1.55;margin-bottom:20px;font-weight:500}
 .opts{display:grid;gap:9px}
-.opt{text-align:left;font-family:inherit;font-size:14px;line-height:1.6;color:var(--ink);background:#fff;border:1px solid var(--line-soft);border-left:2px solid var(--clay);padding:12px 14px;cursor:pointer;transition:background .18s,transform .18s}
+.opt{text-align:left;font-family:inherit;font-size:13.5px;line-height:1.6;color:var(--ink);background:#fff;border:1px solid var(--line-soft);border-left:2px solid var(--clay);padding:12px 14px;cursor:pointer;transition:background .18s,transform .18s}
 .opt:hover,.opt:focus-visible{background:var(--paper-2)}
 .opt:active{transform:translateX(2px)}
 .result{display:none}
@@ -118,41 +127,34 @@ section p{max-width:34em}
 .scale span{display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;transition:flex-basis .6s ease;white-space:nowrap;overflow:hidden}
 .scale .s-h{background:#cfdcd8;color:#26433c}
 .scale .s-r{background:#f0cdc4;color:#7d2620}
-.verdict{font-size:20px;font-weight:600;margin:14px 0 6px}
+.verdict{font-size:22px;font-weight:600;margin:14px 0 6px}
 .assign{border:1px solid var(--line-soft);padding:15px;margin-top:16px;background:#fff}
-.assign dt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft)}
-.assign dd{margin:2px 0 13px;font-size:14px}
+.assign dt{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;color:var(--ink-soft)}
+.assign dd{margin:2px 0 13px;font-size:13.5px}
 .assign dd:last-child{margin-bottom:0}
 .again{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;background:none;border:none;border-bottom:1px solid var(--clay);color:var(--ink-soft);cursor:pointer;padding:2px 0;margin-top:16px}
 .again:hover{color:var(--ink)}
 
 /* stages */
 .stages{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,rgba(226,231,228,.72) 0%,rgba(251,246,241,.92) 34%,rgba(244,220,213,.86) 100%);overflow:hidden}
-.stages::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(79,111,104,.10),transparent 42%,rgba(176,54,47,.12));pointer-events:none}
 .stages .stage{position:relative}
-.stage b{background:linear-gradient(180deg,#4f6f68 0%,#96682b 52%,#b0362f 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.stage:nth-child(1) b{opacity:.82}
-.stage:nth-child(2) b{opacity:.88}
-.stage:nth-child(3) b{opacity:.93}
-.stage:nth-child(4) b,.stage:nth-child(5) b{opacity:1}
 .stage{display:grid;grid-template-columns:78px 1fr;gap:13px;padding:12px 14px;border-bottom:1px solid var(--line-soft);align-items:baseline}
 .stage:last-child{border-bottom:none}
-.stage b{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:11.5px;letter-spacing:.04em;color:var(--gold)}
-.stage span{font-size:14px}
-.stage:nth-child(4) b,.stage:nth-child(5) b{color:transparent}
+.stage b{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:11px;letter-spacing:.04em;color:var(--gold)}
+.stage span{font-size:13.5px}
 .pair{display:grid;gap:13px;margin:24px 0}
 @media(min-width:620px){.pair{grid-template-columns:1fr 1fr}}
 .box{border:1px solid var(--line-soft);padding:16px;background:#fbf6f1}
-.box h3{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;margin-bottom:7px;color:var(--ink-soft)}
-.box p{margin:0;font-size:14px}
+.box h3{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;margin-bottom:7px;color:var(--ink-soft)}
+.box p{margin:0;font-size:13.5px}
 
 /* people */
-.person{padding:22px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:84px 1fr;gap:17px;align-items:start}
+.person{padding:16px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:84px 1fr;gap:17px;align-items:start}
 .person:last-of-type{border-bottom:none}
 .person .nm{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:6px}
-.person .nm b{font-size:18px;font-weight:600}
-.person .nm em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;color:var(--ink-soft)}
-.person p{margin:0;font-size:14.5px;max-width:32em}
+.person .nm b{font-size:17px;font-weight:600}
+.person .nm em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft)}
+.person p{margin:0;font-size:13.5px;max-width:32em}
 
 @media(min-width:861px){
   section p{max-width:none}
@@ -162,40 +164,34 @@ section p{max-width:34em}
 .person.lead-figure{border-left:2px solid var(--lamp);padding-left:15px;grid-template-columns:94px 1fr}
 #garden .person.lead-figure{border-left-color:var(--fire)}
 .portrait{width:100%;aspect-ratio:3/4;border:1px solid var(--line);overflow:hidden;background:linear-gradient(160deg,#fff,rgba(51,39,31,.09));display:grid;place-items:center}
-.portrait img{width:100%;height:100%;object-fit:cover;display:block}
-.portrait span{font-family:"IBM Plex Mono",monospace;font-size:15px;letter-spacing:.1em;color:rgba(51,39,31,.3)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
+.portrait span{font-family:"IBM Plex Mono",monospace;font-size:16px;letter-spacing:.1em;color:rgba(51,39,31,.3)}
 .quote{font-size:16px;line-height:1.7;padding-left:15px;border-left:2px solid var(--clay);margin:22px 0;font-weight:500}
 .card-list{display:grid;gap:11px;margin-top:20px}
 .card{border:1px solid var(--line-soft);padding:14px 16px;background:rgba(255,255,255,.62)}
-.card b{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;display:block;margin-bottom:4px}
-.card span{font-size:14px}
+.card b{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;display:block;margin-bottom:4px}
+.card span{font-size:13.5px}
 
-.banner{margin:0 0 26px;border:1px solid var(--line);overflow:hidden;line-height:0}
+.banner{margin:0 0 18px;border:1px solid var(--line);overflow:hidden;line-height:0}
 .banner img{width:100%;height:clamp(120px,26vw,190px);object-fit:cover;display:block}
-.banner figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;color:var(--ink-soft);line-height:1.6;padding:7px 10px;background:rgba(255,255,255,.5)}
 .banner.tall img{height:clamp(150px,32vw,230px)}
 
 /* profile form */
 .tabs{display:flex;border:1px solid var(--line);border-bottom:none}
-.tabs button{flex:1;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;padding:11px 8px;background:#e7dbd0;border:none;border-right:1px solid var(--line);color:var(--ink-soft);cursor:pointer}
+.tabs button{flex:1;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;padding:11px 8px;background:#e7dbd0;border:none;border-right:1px solid var(--line);color:var(--ink-soft);cursor:pointer}
 .tabs button:last-child{border-right:none}
 .tabs button[aria-selected=true]{background:#fbf6f1;color:var(--ink);font-weight:500}
 .sheet{border:1px solid var(--line);background:#fbf6f1;padding:18px 16px}
-.sheet pre{margin:0;font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:2;color:var(--ink);white-space:pre-wrap;word-break:break-word}
-.sheet pre i{font-style:normal;color:rgba(51,39,31,.45)}
+.sheet pre{margin:0;font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:2;color:var(--ink);white-space:pre-wrap;word-break:break-word}
 .sheet .copy{margin-top:16px;margin-right:8px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;background:#fff;border:1px solid var(--line);color:var(--ink);padding:9px 15px;cursor:pointer}
 .sheet .copy:hover{background:var(--paper-2)}
 .hidden{display:none}
 
 /* signal */
-.signal-box{border:1px solid rgba(234,223,214,.22);padding:28px 20px;text-align:center}
-.spinner{width:46px;height:46px;margin:0 auto 20px;border:1px solid rgba(234,223,214,.25);border-top-color:#c8877a;border-radius:50%;animation:spin 2.4s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion: reduce){.spinner{animation-duration:9s}}
 #log{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;color:rgba(234,223,214,.66);min-height:5.4em;text-align:left;max-width:30em;margin:0 auto}
 #log div{opacity:0;animation:fade .5s forwards}
 @keyframes fade{to{opacity:1}}
-.sig-title{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.2em;margin-bottom:8px}
 footer{padding:34px 0 52px;background:var(--night);color:rgba(234,223,214,.55);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;text-align:center}
 :focus-visible{outline:2px solid var(--clay);outline-offset:3px}
 
@@ -204,7 +200,7 @@ footer{padding:34px 0 52px;background:var(--night);color:rgba(234,223,214,.55);f
 .section-index{margin:0;font:500 9px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--ink-soft);white-space:nowrap}
 
 /* hero: wider, cleaner type block */
-header{min-height:68vh;padding:96px 0 58px}
+header{min-height:56vh;padding:74px 0 44px}
 .tagline,.subline{max-width:none}
 .tagline{max-width:58em}
 .subline{max-width:62em}
@@ -234,59 +230,179 @@ header{min-height:68vh;padding:96px 0 58px}
 #haven{padding-top:78px;padding-bottom:82px}
 #haven .banner:first-of-type{margin-top:8px}
 #haven .person{background:rgba(255,255,255,.25);padding:20px 0}
-#haven .card-list{grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-#haven .card{border:0;min-height:132px;background:rgba(255,255,255,.52)}
 @media(max-width:760px){#haven .card-list{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){#haven .card-list{grid-template-columns:1fr}}
 
 /* ROSE GARDEN */
-  #garden .h2{color:#fff}
-#garden{padding-top:80px;padding-bottom:88px;color:var(--bone);background:radial-gradient(ellipse at 82% 8%,rgba(169,74,64,.22),transparent 34%),radial-gradient(ellipse at 12% 90%,rgba(99,77,68,.16),transparent 38%),linear-gradient(145deg,#3b2927,#241b1b)}
+#garden{padding-top:54px;padding-bottom:60px;background:radial-gradient(ellipse at 82% 8%,rgba(169,74,64,.22),transparent 34%),radial-gradient(ellipse at 12% 90%,rgba(99,77,68,.16),transparent 38%),linear-gradient(145deg,#3b2927,#241b1b)}
 #garden .kicker{color:#fff}
 #garden .section-index{color:#fff}
 #garden .garden-lead{color:#fff;max-width:50em}
-.garden-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(240px,.72fr);gap:38px;align-items:start}
-.garden-story p{color:rgba(243,232,223,.76);font-size:14px;line-height:1.95}
+.garden-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(240px,.72fr);gap:28px;align-items:start}
+.garden-story p{color:rgba(243,232,223,.76);font-size:13.5px;line-height:1.95}
 .garden-story .banner{margin-bottom:24px;border-color:rgba(243,232,223,.16)}
-.garden-aside{position:sticky;top:78px}
+.garden-aside{position:static}
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(243,232,223,.13);border:1px solid rgba(243,232,223,.13)}
-.info-card{min-height:124px;padding:17px;background:rgba(36,27,27,.52)}
+.info-card{min-height:100px;padding:15px;background:rgba(36,27,27,.52)}
 .info-card b{display:block;margin-bottom:10px;color:#e9d4cb;font:500 9px/1.2 "IBM Plex Mono",monospace;letter-spacing:.13em}
-.info-card span{color:rgba(243,232,223,.62);font-size:13px;line-height:1.75}
-#garden .people-compact{margin-top:44px;border-top:1px solid rgba(243,232,223,.16)}
+.info-card span{color:rgba(243,232,223,.62);font-size:13.5px;line-height:1.75}
+#garden .people-compact{margin-top:30px;border-top:1px solid rgba(243,232,223,.16)}
 #garden .person{border-bottom-color:rgba(243,232,223,.14)}
 #garden .person p{color:rgba(243,232,223,.72);max-width:none}
 #garden .person .nm b{color:#f0ddd4}
 #garden .person .nm em{color:rgba(243,232,223,.46)}
 #garden .portrait{border-color:rgba(243,232,223,.15);background:#2b2020}
 #garden .quote{color:#f0ddd4;border-left-color:var(--clay)}
-#garden .garden-final-image{margin-top:38px;border-color:rgba(243,232,223,.16)}
+#garden .garden-final-image{margin-top:26px;border-color:rgba(243,232,223,.16)}
 #garden .garden-cards{grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(243,232,223,.13);border:1px solid rgba(243,232,223,.13)}
-#garden .garden-cards .card{border:0;min-height:132px;background:rgba(36,27,27,.54);padding:17px}
+#garden .garden-cards .card{border:0;min-height:112px;background:rgba(36,27,27,.54);padding:15px}
 #garden .garden-cards .card b{color:#e9d4cb}
-#garden .garden-cards .card span{color:rgba(243,232,223,.62);font-size:13px;line-height:1.75}
+#garden .garden-cards .card span{color:rgba(243,232,223,.62);font-size:13.5px;line-height:1.75}
 @media(max-width:760px){.garden-grid{grid-template-columns:1fr}.garden-aside{position:static}#garden .garden-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){#garden .garden-cards{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr 1fr}}
 
+/* 수정: 로즈가든 재생바를 어두운 배경에 맞춤 */
+#garden .player{border-color:rgba(243,232,223,.18);background:rgba(36,27,27,.42);margin-bottom:20px}
+#garden .player .tname{color:#f0ddd4}
+#garden .player button{background:rgba(36,27,27,.6);border-color:rgba(243,232,223,.22);color:#f0ddd4}
+#garden .player button:hover:not(:disabled){background:rgba(243,232,223,.14)}
+#garden .player .thint,#garden .player .time{color:rgba(243,232,223,.5)}
+#garden .quote{margin:26px 0 8px}
+
 /* signal / next preview */
-#signal{min-height:470px;padding:82px 0 96px;background:radial-gradient(circle at 50% 46%,rgba(201,126,111,.08),transparent 20%),#17191a;color:#eadfd6;border-top:0}
+#signal{min-height:360px;padding:56px 0 64px;background:radial-gradient(circle at 50% 46%,rgba(201,126,111,.08),transparent 20%),#17191a;color:#eadfd6;border-top:0}
 #signal .wrap{text-align:center}
 .signal-kicker{margin:0 0 12px;color:rgba(234,223,214,.42);font:500 9px/1 "IBM Plex Mono",monospace;letter-spacing:.28em}
 .signal-title{margin:0;font-size:clamp(28px,5vw,44px);font-weight:400;letter-spacing:-.04em;line-height:1}
-.signal-copy{margin:14px auto 42px;max-width:32em;color:rgba(234,223,214,.48);font-size:12px;line-height:1.8}
-.signal-terminal{max-width:500px;margin:0 auto;padding:28px 26px 24px;border:1px solid rgba(234,223,214,.12);background:rgba(10,12,13,.28)}
-.signal-core{position:relative;width:92px;height:92px;margin:0 auto 28px}
+.signal-copy{margin:12px auto 28px;max-width:32em;color:rgba(234,223,214,.48);font-size:11px;line-height:1.8}
+.signal-terminal{max-width:500px;margin:0 auto;padding:22px 22px 18px;border:1px solid rgba(234,223,214,.12);background:rgba(10,12,13,.28)}
+.signal-core{position:relative;width:78px;height:78px;margin:0 auto 20px}
 .ring{position:absolute;inset:0;border:1px solid rgba(234,223,214,.18);border-radius:50%;animation:spin 8s linear infinite}
 .ring:before{content:"";position:absolute;top:-3px;left:50%;width:5px;height:5px;border-radius:50%;background:#c57c6e;box-shadow:0 0 14px rgba(197,124,110,.6)}
 .ring.r2{inset:13px;border-color:rgba(234,223,214,.11);animation-direction:reverse;animation-duration:5s}
-.pulse{position:absolute;inset:38px;border:1px solid rgba(197,124,110,.45);border-radius:50%;box-shadow:0 0 20px rgba(197,124,110,.12);animation:pulse 2.6s ease-in-out infinite}
+.pulse{position:absolute;inset:32px;border:1px solid rgba(197,124,110,.45);border-radius:50%;box-shadow:0 0 20px rgba(197,124,110,.12);animation:sigpulse 2.6s ease-in-out infinite}
+@keyframes sigpulse{0%,100%{opacity:.5;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
 .signal-log{padding-top:17px;border-top:1px solid rgba(234,223,214,.1);text-align:left;color:rgba(234,223,214,.47);font:10px/2 "IBM Plex Mono",monospace;letter-spacing:.04em}
 .signal-log #log{min-height:2em;margin:0;max-width:none;text-align:left;color:rgba(234,223,214,.47);font:inherit}
-.signal-status{margin-top:25px;color:rgba(197,124,110,.72);font:500 9px/1 "IBM Plex Mono",monospace;letter-spacing:.2em}
+.signal-status{margin-top:18px;color:rgba(197,124,110,.72);font:500 9px/1 "IBM Plex Mono",monospace;letter-spacing:.2em}
 @media(prefers-reduced-motion:reduce){.ring,.pulse{animation:none}}
 
 /* footer */
-footer{padding:30px 0 44px}
+footer{padding:24px 0 32px}
+
+/* =========================================================
+   FRONT SECTIONS — editorial redesign to match THE PIT
+   ========================================================= */
+:root{
+  --front-rule:rgba(51,39,31,.15);
+  --front-muted:rgba(51,39,31,.56);
+  --haven-ink:#26312f;
+  --haven-muted:rgba(38,49,47,.60);
+}
+.editorial-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:20px;border-bottom:1px solid var(--front-rule);padding-bottom:13px}
+.editorial-head .h2{margin-bottom:0}
+.editorial-head .kicker{margin-bottom:8px}
+.section-index{flex:none}
+
+/* QUIZ / DECISION — like an opening dossier */
+#quiz{background:#f1e8df;padding-top:52px;padding-bottom:56px}
+#quiz .lead{font-size:13.5px;color:var(--front-muted);max-width:60em;margin-bottom:18px}
+#quiz .player{background:rgba(255,255,255,.34);border-color:rgba(51,39,31,.16);margin-bottom:20px}
+#quiz .quiz-card{border:0;border-top:1px solid rgba(51,39,31,.18);border-bottom:1px solid rgba(51,39,31,.18);background:transparent;padding:24px 0 0;grid-template-columns:minmax(0,1fr) 340px;gap:46px}
+#quiz .qcount{font-size:11px;letter-spacing:.2em}
+#quiz .qbar{height:1px;margin:0 0 20px;background:rgba(51,39,31,.18)}
+#quiz .qbar i{background:#9c5a4e}
+#quiz .qtext{font-size:clamp(21px,3vw,30px);font-weight:400;line-height:1.42;max-width:18em;letter-spacing:-.025em;margin-bottom:20px}
+#quiz .opts{gap:0;border-top:1px solid rgba(51,39,31,.12)}
+#quiz .opt{border:0;border-bottom:1px solid rgba(51,39,31,.12);border-left:0;background:transparent;padding:13px 6px 13px 0;font-size:13.5px;position:relative}
+#quiz .opt::before{content:'→';display:inline-block;width:26px;color:#9c5a4e;opacity:.7}
+#quiz .opt:hover,#quiz .opt:focus-visible{background:rgba(255,255,255,.28);padding-left:8px}
+#quiz .result{border-left:1px solid rgba(51,39,31,.14);padding-left:28px}
+.scale-legend{margin:0 0 14px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--front-muted)}
+#quiz .scale{height:7px;border:0;margin:18px 0 15px;gap:2px;background:transparent}
+#quiz .scale span{font-size:0;height:7px}
+#quiz .scale .s-h{background:#819a92}.s-r{background:#b46a5e!important}
+#quiz .verdict{font-size:22px;font-weight:400;letter-spacing:-.03em}
+/* 수정: rdesc 인라인 색상 제거에 맞춰 !important 정리 */
+#quiz #rdesc{font-size:13.5px;line-height:1.85;color:var(--front-muted)}
+#quiz .assign{border:0;border-top:1px solid rgba(51,39,31,.12);padding:14px 0 0;background:transparent}
+#quiz .assign dt{font-size:11px;color:rgba(51,39,31,.45)}
+#quiz .assign dd{font-size:13.5px;margin:2px 0 12px}
+#quiz .again{font-size:11px;text-transform:uppercase}
+
+/* PROFILE / IDENTITY */
+#profile{background:#f1e8df;padding-top:50px;padding-bottom:56px}
+#profile .lead{font-size:13.5px;color:var(--front-muted);margin-bottom:22px}
+#profile .tabs{border:0;border-bottom:1px solid var(--front-rule);gap:0}
+#profile .tabs button{flex:0 0 auto;min-width:150px;text-align:left;border:0;border-right:1px solid var(--front-rule);background:transparent;padding:13px 18px 13px 0;margin-right:18px;color:rgba(51,39,31,.42);font-size:11px;letter-spacing:.16em}
+#profile .tabs button[aria-selected=true]{background:transparent;color:var(--ink);font-weight:500;border-bottom:2px solid #9c5a4e}
+#profile .sheet{border:0;background:transparent;padding:26px 0 0;position:relative}
+#profile .sheet pre{font-size:13.5px;line-height:2.05;color:#3f332c;max-width:760px}
+/* 수정: 안내 문구는 흐리게, 채워진 값만 진하게 */
+#profile .sheet pre span[data-f]{color:rgba(51,39,31,.42)}
+#profile .sheet pre span[data-f].filled{color:#9c5a4e}
+#profile .sheet .copy,#profile .sheet .dice{border:1px solid rgba(51,39,31,.2);background:transparent;margin-top:22px;padding:8px 13px;font-size:11px;letter-spacing:.14em}
+#profile .sheet .dice{background:#33271f;color:#f4ece4;border-color:#33271f}
+
+/* WORLD / PATHOGEN — diagnostic board */
+#world{background:#f1e8df;padding-top:52px;padding-bottom:58px}
+#world .lead{font-size:13.5px;color:var(--front-muted);margin-bottom:22px;max-width:58em}
+#world .pair{margin:0 0 24px;gap:1px;background:rgba(51,39,31,.13);border:1px solid rgba(51,39,31,.13)}
+#world .box{border:0;min-height:128px;background:rgba(255,255,255,.34);padding:17px;justify-content:flex-start}
+#world .box:first-child{background:rgba(79,111,104,.09)}
+#world .box:last-child{background:rgba(176,54,47,.08)}
+#world .box h3{font-size:11px;letter-spacing:.18em;margin-bottom:auto;color:rgba(51,39,31,.5)}
+#world .box p{font-size:13.5px;line-height:1.8;max-width:28em}
+#world .stages{border:0;background:linear-gradient(90deg,rgba(79,111,104,.08),rgba(255,255,255,.18) 45%,rgba(176,54,47,.10));overflow:hidden}
+#world .stages::before{display:none}
+#world .stage{grid-template-columns:125px 1fr;padding:14px 16px;border-bottom:1px solid rgba(51,39,31,.13)}
+#world .stage b{font-size:26px;font-weight:400;letter-spacing:-.05em;line-height:1}
+#world .stage span{font-size:13.5px;color:rgba(51,39,31,.68);align-self:center}
+#world > .wrap > p:not(.lead){font-size:11px;line-height:1.95;color:rgba(51,39,31,.58);max-width:65em}
+
+/* HAVEN / SHELTER — cool, institutional, image-led */
+#haven{background:#dfe5e2;color:var(--haven-ink);padding-top:54px;padding-bottom:60px}
+#haven .editorial-head{border-bottom-color:rgba(38,49,47,.18)}
+#haven .section-index,#haven .kicker{color:rgba(38,49,47,.46)}
+#haven .lead{font-size:13.5px;color:var(--haven-muted);max-width:62em;margin-bottom:20px}
+#haven .player{border-color:rgba(38,49,47,.17);background:rgba(255,255,255,.28);margin-bottom:20px}
+#haven .banner{border:0;margin:0 0 20px;position:relative}
+#haven .banner img{height:clamp(120px,26vw,190px);filter:saturate(.72) contrast(.96);object-position:center}
+#haven > .wrap > p:not(.lead){font-size:13.5px;color:rgba(38,49,47,.68);max-width:64em;line-height:1.9;margin:0 0 22px}
+#haven .person{grid-template-columns:92px 1fr;padding:15px 0;border-bottom:1px solid rgba(38,49,47,.13)}
+#haven .person.lead-figure{border-left:2px solid #4f6f68;padding-left:15px}
+#haven .portrait{border-color:rgba(38,49,47,.16);background:#d4ddda}
+#haven .person .nm b{font-size:17px;color:#26312f}
+#haven .person .nm em{color:rgba(38,49,47,.44)}
+#haven .person p{font-size:13.5px;line-height:1.85;color:rgba(38,49,47,.68)}
+#haven .quote{border-left-color:#4f6f68;color:#31443f;font-size:16px;margin:20px 0 24px;padding-left:16px}
+#haven .card-list{margin-top:26px;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(38,49,47,.13);border:1px solid rgba(38,49,47,.13)}
+#haven .card{border:0;background:rgba(255,255,255,.28);min-height:112px;padding:15px}
+#haven .card b{font-size:11px;letter-spacing:.16em;color:rgba(38,49,47,.56)}
+#haven .card span{font-size:13.5px;line-height:1.8;color:rgba(38,49,47,.63)}
+#haven .banner + p + .person{margin-top:8px}
+
+/* global image / rhythm refinements */
+.banner img{transition:filter .25s,transform .5s}
+.banner:hover img{transform:scale(1.01)}
+@media(min-width:761px){
+  #haven .person{grid-template-columns:84px 1fr}
+}
+@media(max-width:760px){
+  .editorial-head{align-items:flex-start}
+  .section-index{padding-top:5px}
+  #quiz .quiz-card{grid-template-columns:1fr;gap:26px}
+  #quiz .result{border-left:0;border-top:1px solid rgba(51,39,31,.14);padding:24px 0 0}
+  #world .stage{grid-template-columns:78px 1fr}
+  #haven .card-list{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .editorial-head{display:block}
+  .section-index{margin-top:10px}
+  #profile .tabs button{min-width:0;margin-right:12px;padding-right:12px}
+  #haven .card-list{grid-template-columns:1fr}
+  #haven .person{grid-template-columns:70px 1fr;gap:13px}
+}
 </style>
 </head>
 <body>
@@ -314,9 +430,9 @@ footer{padding:30px 0 44px}
   <div class="editorial-head"><div><p class="kicker">ADMISSION TEST</p><h2 class="h2">당신은 어느 쪽 불빛인가</h2></div><p class="section-index">01 / DECISION</p></div>
   <p class="lead">여덟 개의 상황이 주어진다. 정답은 없고, 사막에서 오래 버티는 방식만 다르다. 마지막에 당신이 설 자리가 정해진다.</p>
 
-  <div class="player" data-track="admission" data-name="[good night]" data-src="assets/good_night.mp3">
+  <div class="player" data-track="admission" data-name="GOOD NIGHT" data-src="assets/good_night.mp3">
     <button class="play" aria-label="재생">▶</button>
-    <div class="meta"><div class="tname">[good night]</div><div class="thint">the.l.s. 테마</div></div>
+    <div class="meta"><div class="tname">GOOD NIGHT</div><div class="thint">the.l.s. 테마</div></div>
     <input type="range" class="seek" value="0" min="0" max="1000" aria-label="재생 위치" disabled>
     <span class="time">0:00</span>
     <button class="load">파일</button>
@@ -329,11 +445,13 @@ footer{padding:30px 0 44px}
       <p class="qtext" id="qtext"></p>
       <div class="opts" id="opts"></div>
     </div>
-    <div class="result" id="result">
+    <div class="result" id="result" role="status" aria-live="polite">
       <p class="qcount">판정 완료</p>
-      <div class="scale"><span class="s-h" id="sH">HAVEN</span><span class="s-r" id="sR">ROSE GARDEN</span></div>
+      <div class="scale" id="scale"><span class="s-h" id="sH">HAVEN</span><span class="s-r" id="sR">ROSE GARDEN</span></div>
+      <p class="scale-legend" id="scaleText"></p>
       <p class="verdict" id="verdict"></p>
-      <p id="rdesc" style="color:var(--bone-dim)"></p>
+      <!-- 수정: 정의되지 않은 --bone-dim 변수 제거 -->
+      <p id="rdesc"></p>
       <dl class="assign">
         <dt>배정</dt><dd id="rrole"></dd>
         <dt>첫 장면</dt><dd id="rscene"></dd>
@@ -350,11 +468,11 @@ footer{padding:30px 0 44px}
   <p class="lead">유저 프로필로 붙여 넣고 시작할 수 있습니다.</p>
 
   <div class="tabs" role="tablist">
-    <button role="tab" aria-selected="true" data-sheet="h">HAVEN</button>
-    <button role="tab" aria-selected="false" data-sheet="r">ROSE GARDEN</button>
+    <button role="tab" id="tab-h" aria-controls="sheet-h" aria-selected="true" data-sheet="h">HAVEN</button>
+    <button role="tab" id="tab-r" aria-controls="sheet-r" aria-selected="false" data-sheet="r">ROSE GARDEN</button>
   </div>
 
-  <div class="sheet" id="sheet-h">
+  <div class="sheet" id="sheet-h" role="tabpanel" aria-labelledby="tab-h">
 <pre>[이름] <span data-f="name"></span>
 [나이] <span data-f="age"></span>
 [외형] <span data-f="look">한두 줄. 눈에 띄는 특징 위주</span>
@@ -370,7 +488,7 @@ footer{padding:30px 0 44px}
     <button class="copy dice" data-target="sheet-h" data-side="h">랜덤 배정</button>
   </div>
 
-  <div class="sheet hidden" id="sheet-r">
+  <div class="sheet hidden" id="sheet-r" role="tabpanel" aria-labelledby="tab-r">
 <pre>[이름] <span data-f="name"></span>
 [나이] <span data-f="age"></span>
 [외형] <span data-f="look">한두 줄. 눈에 띄는 특징 위주</span>
@@ -421,12 +539,12 @@ footer{padding:30px 0 44px}
     <button class="load">파일</button>
   </div>
 
-  <figure class="banner"><img src="assets/image_01_4f856a3b4e.jpg" alt="셸터 지하 통로"></figure>
+  <figure class="banner"><img src="assets/image_01_4f856a3b4e.jpg" alt="셸터 지하 통로" loading="lazy"></figure>
 
   <p>여기서는 아무도 굶어 죽지 않는다. 사막에서 그것은 기적에 가까운 조건이고, 그 대가로 규칙이 촘촘하다. 배급 시간, 소등, 교대, 반입 검사. 그리고 감염을 숨기는 일은 이곳에서 가장 무거운 죄다.</p>
 
   <div class="person lead-figure">
-    <div class="portrait"><img src="assets/image_02_1014127522.jpg" alt="엘라이어스 베인"></div>
+    <div class="portrait"><img src="assets/image_02_1014127522.jpg" alt="엘라이어스 베인" loading="lazy"></div>
     <div>
     <div class="nm"><b>엘라이어스 베인</b><em>수장 · 39</em></div>
     <p>희망을 주는 말로 사람을 이끌지 않는다. 식량이 부족하면 부족하다고 말하고, 죽을 수 있으면 그렇다고 말한다. 그럼에도 언제나 지금 할 수 있는 다음 행동을 제시한다. 위험한 임무에는 가장 먼저 나간다.</p>
@@ -436,28 +554,28 @@ footer{padding:30px 0 44px}
   <p class="quote">"사람이라서 살릴 수 있는 순간까지는 살린다. 죽여야 할 순간이 오면, 내가 결정해."</p>
 
   <div class="person">
-    <div class="portrait"><img src="assets/image_03_895bbe977f.jpg" alt="마야 코르테스"></div>
+    <div class="portrait"><img src="assets/image_03_895bbe977f.jpg" alt="마야 코르테스" loading="lazy"></div>
     <div>
     <div class="nm"><b>마야 코르테스</b><em>의료 · 44</em></div>
     <p>셸터의 유일한 정식 의료인. 감염자를 마지막까지 환자로 보려 한다. 엘라이어스의 처분 결정에 매번 반대하지만 결국 그의 판단을 따른다. 격리실 명단을 쥐고 있어 누군가의 이상을 가장 먼저 알아차린다.</p>
     </div>
   </div>
   <div class="person">
-    <div class="portrait"><img src="assets/image_04_4cd68331d5.jpg" alt="딘 아버클"></div>
+    <div class="portrait"><img src="assets/image_04_4cd68331d5.jpg" alt="딘 아버클" loading="lazy"></div>
     <div>
     <div class="nm"><b>딘 아버클</b><em>정찰대장 · 31</em></div>
     <p>사막을 가장 잘 아는 남자. 원칙보다 사람을 먼저 챙기는 성향이라 엘라이어스와 자주 부딪힌다. 말이 많고 농담이 헤프며, 그래서 이 지하의 공기를 견딜 만하게 만든다.</p>
     </div>
   </div>
   <div class="person">
-    <div class="portrait"><img src="assets/image_05_6c28c9e9d4.jpg" alt="로레인 벅"></div>
+    <div class="portrait"><img src="assets/image_05_6c28c9e9d4.jpg" alt="로레인 벅" loading="lazy"></div>
     <div>
     <div class="nm"><b>로레인 벅</b><em>보급 · 52</em></div>
     <p>물과 식량의 배분을 쥔 사람. 숫자로 말하고 감정을 섞지 않는다. 제 몫을 못 하는 인원은 내보내야 한다고 공공연히 주장하며, 엘라이어스의 결정에 정면으로 반대할 수 있는 유일한 구성원이다.</p>
     </div>
   </div>
 
-  <figure class="banner"><img src="assets/image_06_e7185bdfbb.jpg" alt="해치 밖의 사막"></figure>
+  <figure class="banner"><img src="assets/image_06_e7185bdfbb.jpg" alt="해치 밖의 사막" loading="lazy"></figure>
 
   <div class="card-list">
     <div class="card"><b>지휘실</b><span>벽에 붙은 사막 지도, 마른 펜 냄새. 결정이 내려지는 자리.</span></div>
@@ -469,45 +587,59 @@ footer{padding:30px 0 44px}
 
 <section id="garden">
   <div class="wrap">
-    <div class="section-head garden-head">
+    <!-- 수정: 섹션 번호 02 → 05 -->
+    <div class="editorial-head garden-head">
       <div>
         <p class="kicker">THE PIT — 협곡</p>
         <h2 class="h2">ROSE GARDEN</h2>
       </div>
-      <p class="section-index">02 / THE PIT</p>
+      <p class="section-index">05 / THE PIT</p>
     </div>
     <p class="lead garden-lead">장미는 한 송이도 없다. 붉은 것은 불과 모래. 그리고 피와 스칼렛 크로우. HAVEN에서 사막을 가로질러 반나절, 폐광 협곡에 밤마다 불빛이 켜지는 곳.</p>
 
+    <!-- 수정: 빠져 있던 로즈가든 테마곡 재생바 복구 -->
+    <div class="player" data-track="garden" data-name="Rose Garden Duel" data-src="assets/audio_02_144168395c.mp3">
+      <button class="play" aria-label="재생">▶</button>
+      <div class="meta"><div class="tname">Rose Garden Duel</div><div class="thint">ROSE GARDEN 테마</div></div>
+      <input type="range" class="seek" value="0" min="0" max="1000" aria-label="재생 위치" disabled>
+      <span class="time">0:00</span>
+      <button class="load">파일</button>
+    </div>
+
     <div class="garden-grid">
       <div class="garden-story">
-        <figure class="banner tall"><img src="assets/image_07_e0f162616d.jpg" alt="해 질 녘의 협곡 거래소"></figure>
+        <figure class="banner tall"><img src="assets/image_07_e0f162616d.jpg" alt="해 질 녘의 협곡" loading="lazy"></figure>
         <p>셸터도 공동체도 아니다. 사람들은 물을 들고 와 거래하고, 빚지고, 붙잡힌다. 마신 물 한 컵도, 받은 치료도, 잃은 판돈도 전부 여왕의 장부에 적힌다. 빚을 갚는 방법은 둘뿐이다. 로즈가든을 위해 일하거나, 더 핏에 서거나.</p>
         <p>TLS가 공포를 먹고 자란다는 사실을 이곳도 안다. 다만 쓰는 방향이 반대다. 함성과 피 냄새, 굶주림. 감염자를 모래 위에 세우고 겁을 주면 수치는 눈앞에서 치솟고, 관중은 사람이 괴물로 넘어가는 바로 그 순간에 돈을 건다.</p>
-        <div class="quote">"살려 줘? 달링, 그건 부탁이 아니라 입찰이야. 뭘 걸 건데?"</div>
       </div>
 
+      <!-- 수정: 아래 카드와 중복되던 네 장을 다른 정보로 교체 (SCARLET CROW 오탈자도 함께 정리) -->
       <aside class="garden-aside">
         <div class="info-grid">
-          <div class="info-card"><b>SCARLET CROW</b><span>협곡을 지배하는 여왕과 그녀의 장부.</span></div>
-          <div class="info-card"><b>THE LEDGER</b><span>물, 치료, 판돈. 살아남은 대가가 기록된다.</span></div>
-          <div class="info-card"><b>THE PIT</b><span>협곡 바닥에 원형으로 파인 모래 구덩이.</span></div>
-          <div class="info-card"><b>THE QUEEN'S ROOM</b><span>물이 귀한 사막에서 향수 냄새가 나는 유일한 공간.</span></div>
+          <div class="info-card"><b>LOCATION</b><span>폐광 협곡. HAVEN에서 반나절 거리.</span></div>
+          <div class="info-card"><b>CURRENCY</b><span>물, 탄약, 사람의 목숨.</span></div>
+          <div class="info-card"><b>OPEN</b><span>해 질 녘부터 마지막 경기가 끝날 때까지.</span></div>
+          <div class="info-card"><b>WAY OUT</b><span>일해서 갚거나, 모래 위에 서거나.</span></div>
         </div>
       </aside>
     </div>
 
     <div class="people-compact">
       <div class="person lead-figure">
-        <div class="portrait"><img src="assets/image_08_5f225f65a0.jpg" alt="스칼렛 크로우"></div>
+        <div class="portrait"><img src="assets/image_08_5f225f65a0.jpg" alt="스칼렛 크로우" loading="lazy"></div>
         <div><div class="nm"><b>스칼렛 크로우</b><em>레드 마담 · 30대 중반</em></div><p>잘 웃고, 박수를 치고, 노래하듯 말한다. 기분이 좋을 때가 가장 위험하다. 선악을 모르는 것이 아니라 재미없다는 이유로 버렸다. 마음에 든 것은 이름을 새로 붙여 곁에 두고, 흥미를 잃는 순간 모래 위로 던진다.</p></div>
       </div>
+
+      <!-- 수정: 인용구를 스칼렛 소개 뒤로 이동 (HAVEN 섹션과 같은 순서) -->
+      <div class="quote">"살려 줘? 달링, 그건 부탁이 아니라 입찰이야. 뭘 걸 건데?"</div>
+
       <div class="person">
-        <div class="portrait"><img src="assets/image_09_68d6a5ad95.jpg" alt="강아지"></div>
+        <div class="portrait"><img src="assets/image_09_68d6a5ad95.jpg" alt="강아지" loading="lazy"></div>
         <div><div class="nm"><b>강아지</b><em>챔피언 · 본명 오티스 크로우</em></div><p>로즈가든의 옛 주인이자 그녀의 남편. 지금은 목에 쇠사슬을 차고 모래 위에 선다. 수치는 광폭화 직전에서 멈춰 있는데, 저절로 멈춘 것이 아니다. 경기 전에는 굶주림으로 끌어올리고, 끝나면 아내의 노랫소리로 끌어내린다.</p></div>
       </div>
     </div>
 
-    <figure class="banner tall garden-final-image"><img src="assets/image_10_64bd709997.jpg" alt="더 핏의 경기"></figure>
+    <figure class="banner tall garden-final-image"><img src="assets/image_10_64bd709997.jpg" alt="더 핏의 경기" loading="lazy"></figure>
 
     <div class="card-list garden-cards">
       <div class="card"><b>더 핏</b><span>협곡 바닥에 원형으로 파인 모래 구덩이. 내려오는 계단은 있어도 올라가는 계단은 없다.</span></div>
@@ -521,7 +653,8 @@ footer{padding:30px 0 44px}
 <section id="signal">
   <div class="wrap">
     <div class="signal-head">
-      <p class="signal-kicker">INCOMING TRANSMISSION / 02</p>
+      <!-- 수정: 02 → 06 -->
+      <p class="signal-kicker">INCOMING TRANSMISSION / 06</p>
       <h2 class="signal-title">다음 신호를 기다리는 중</h2>
       <p class="signal-copy">사막 어딘가에서 약한 신호가 잡힌다.<br>아직 위치는 특정되지 않았다.</p>
     </div>
@@ -577,6 +710,7 @@ const ROLES={
  fighter:{n:"더 핏의 선수",s:"우리 안. 경기 순서를 기다리는 자리다.",w:"여왕을 지루하게 만든 사람은 다음 경기에 이름이 오른다."}
 };
 let qi=0,H=0,R=0,roles={};
+let lastTop=null;
 const $=s=>document.querySelector(s);
 function render(){
   const q=QS[qi];
@@ -596,8 +730,10 @@ function finish(){
   const res=$("#result");res.classList.add("show");
   const total=H+R,ph=Math.round(H/total*100),pr=100-ph;
   $("#sH").style.flexBasis=ph+"%";$("#sR").style.flexBasis=pr+"%";
-  $("#sH").textContent=ph>14?"HAVEN "+ph+"%":"";
-  $("#sR").textContent=pr>14?"ROSE GARDEN "+pr+"%":"";
+  $("#sH").textContent="";$("#sR").textContent="";
+  $("#scale").setAttribute("role","img");
+  $("#scale").setAttribute("aria-label","HAVEN "+ph+"퍼센트, ROSE GARDEN "+pr+"퍼센트");
+  $("#scaleText").textContent="HAVEN "+ph+"% · ROSE GARDEN "+pr+"%";
   const top=Object.keys(roles).sort((a,b)=>roles[b]-roles[a])[0];
   const havenSide=ph>=pr;
   const role=ROLES[top];
@@ -637,8 +773,8 @@ document.querySelectorAll(".player").forEach(p=>{
     if(audio.paused){document.querySelectorAll("audio").forEach(a=>a.pause());audio.play();play.textContent="❚❚";}
     else{audio.pause();play.textContent="▶";}
   };
-  audio.onplay=()=>{play.textContent="❚❚";hint.textContent="재생 중";};
-  audio.onpause=()=>{play.textContent="▶";if(audio.src)hint.textContent="일시정지";};
+  audio.onplay=()=>{play.textContent="❚❚";play.setAttribute("aria-label","일시정지");hint.textContent="재생 중";};
+  audio.onpause=()=>{play.textContent="▶";play.setAttribute("aria-label","재생");if(audio.src)hint.textContent="일시정지";};
   audio.onended=()=>{play.textContent="▶";hint.textContent="끝";};
   audio.ontimeupdate=()=>{
     if(audio.duration){seek.value=audio.currentTime/audio.duration*1000;time.textContent=fmt(audio.currentTime);}
@@ -655,7 +791,6 @@ const FILL={
  gambler:{side:"r",role:"손님",rel:"장부에 이름이 오른 빚쟁이",debt:"잃은 판돈과 마신 물. 아직 갚는 중"},
  fighter:{side:"r",role:"선수",rel:"여왕이 고른 사람",debt:"경기로 갚는 중. 이기면 줄고 지면 늘어난다"}
 };
-let lastTop=null;
 document.getElementById("fill").onclick=()=>{
   if(!lastTop)return;
   const f=FILL[lastTop];
@@ -663,7 +798,8 @@ document.getElementById("fill").onclick=()=>{
   document.getElementById("sheet-h").classList.toggle("hidden",f.side!=="h");
   document.getElementById("sheet-r").classList.toggle("hidden",f.side!=="r");
   const sheet=document.getElementById(f.side==="h"?"sheet-h":"sheet-r");
-  const set=(k,v)=>{const el=sheet.querySelector('[data-f="'+k+'"]');if(el&&v)el.textContent=v;};
+  /* 수정: 채워진 칸에 filled 표시 */
+  const set=(k,v)=>{const el=sheet.querySelector('[data-f="'+k+'"]');if(el&&v){el.textContent=v;el.classList.add("filled");}};
   set("role",f.role);set("rel",f.rel);set("debt",f.debt);
   document.getElementById("profile").scrollIntoView({behavior:"smooth",block:"start"});
 };
@@ -753,9 +889,10 @@ function randomize(side){
     item:pick(POOL.item),
     debt:pick(POOL.debt)
   };
+  /* 수정: 채워진 칸에 filled 표시 */
   Object.keys(v).forEach(k=>{
     const el=sheet.querySelector('[data-f="'+k+'"]');
-    if(el)el.textContent=v[k];
+    if(el){el.textContent=v[k];el.classList.add("filled");}
   });
 }
 document.querySelectorAll(".dice").forEach(b=>{
@@ -780,120 +917,6 @@ function pushLine(){
 }
 pushLine();setInterval(pushLine,2600);
 </script>
-
-<style>
-/* =========================================================
-   FRONT SECTIONS — editorial redesign to match THE PIT
-   ========================================================= */
-:root{
-  --front-rule:rgba(51,39,31,.15);
-  --front-muted:rgba(51,39,31,.56);
-  --haven-ink:#26312f;
-  --haven-muted:rgba(38,49,47,.60);
-}
-.editorial-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px;border-bottom:1px solid var(--front-rule);padding-bottom:17px}
-.editorial-head .h2{margin-bottom:0}
-.editorial-head .kicker{margin-bottom:8px}
-.section-index{flex:none}
-
-/* QUIZ / DECISION — like an opening dossier */
-#quiz{background:#e9dfd5;padding-top:78px;padding-bottom:82px}
-#quiz .lead{font-size:13px;color:var(--front-muted);max-width:60em;margin-bottom:24px}
-#quiz .player{background:rgba(255,255,255,.34);border-color:rgba(51,39,31,.16);margin-bottom:20px}
-#quiz .quiz-card{border:0;border-top:1px solid rgba(51,39,31,.18);border-bottom:1px solid rgba(51,39,31,.18);background:transparent;padding:32px 0 0;grid-template-columns:minmax(0,1fr) 340px;gap:58px}
-#quiz .qcount{font-size:10.5px;letter-spacing:.2em}
-#quiz .qbar{height:1px;margin:0 0 28px;background:rgba(51,39,31,.18)}
-#quiz .qbar i{background:#9c5a4e}
-#quiz .qtext{font-size:clamp(21px,3vw,30px);font-weight:400;line-height:1.42;max-width:18em;letter-spacing:-.025em;margin-bottom:28px}
-#quiz .opts{gap:0;border-top:1px solid rgba(51,39,31,.12)}
-#quiz .opt{border:0;border-bottom:1px solid rgba(51,39,31,.12);border-left:0;background:transparent;padding:17px 6px 17px 0;font-size:14px;position:relative}
-#quiz .opt::before{content:'→';display:inline-block;width:26px;color:#9c5a4e;opacity:.7}
-#quiz .opt:hover,#quiz .opt:focus-visible{background:rgba(255,255,255,.28);padding-left:8px}
-#quiz .result{border-left:1px solid rgba(51,39,31,.14);padding-left:28px}
-#quiz .scale{height:7px;border:0;margin:18px 0 15px;gap:2px;background:transparent}
-#quiz .scale span{font-size:0;height:7px}
-#quiz .scale .s-h{background:#819a92}.s-r{background:#b46a5e!important}
-#quiz .verdict{font-size:23px;font-weight:400;letter-spacing:-.03em}
-#quiz #rdesc{font-size:13px;line-height:1.85;color:var(--front-muted)!important}
-#quiz .assign{border:0;border-top:1px solid rgba(51,39,31,.12);padding:14px 0 0;background:transparent}
-#quiz .assign dt{font-size:9px;color:rgba(51,39,31,.45)}
-#quiz .assign dd{font-size:13px;margin:2px 0 12px}
-#quiz .again{font-size:9px;text-transform:uppercase}
-
-/* PROFILE / IDENTITY */
-#profile{background:#f4ece4;padding-top:72px;padding-bottom:82px}
-#profile .lead{font-size:13px;color:var(--front-muted);margin-bottom:22px}
-#profile .tabs{border:0;border-bottom:1px solid var(--front-rule);gap:0}
-#profile .tabs button{flex:0 0 auto;min-width:150px;text-align:left;border:0;border-right:1px solid var(--front-rule);background:transparent;padding:13px 18px 13px 0;margin-right:18px;color:rgba(51,39,31,.42);font-size:9px;letter-spacing:.16em}
-#profile .tabs button[aria-selected=true]{background:transparent;color:var(--ink);font-weight:500;border-bottom:2px solid #9c5a4e}
-#profile .sheet{border:0;background:transparent;padding:26px 0 0;position:relative}
-#profile .sheet pre{font-size:13px;line-height:2.05;color:#3f332c;max-width:760px}
-#profile .sheet pre span[data-f]{color:#9c5a4e}
-#profile .sheet .copy,#profile .sheet .dice{border:1px solid rgba(51,39,31,.2);background:transparent;margin-top:22px;padding:8px 13px;font-size:9px;letter-spacing:.14em}
-#profile .sheet .dice{background:#33271f;color:#f4ece4;border-color:#33271f}
-
-/* WORLD / PATHOGEN — diagnostic board */
-#world{background:#f0e9e1;padding-top:76px;padding-bottom:86px}
-#world .lead{font-size:13px;color:var(--front-muted);margin-bottom:30px;max-width:58em}
-#world .pair{margin:0 0 32px;gap:1px;background:rgba(51,39,31,.13);border:1px solid rgba(51,39,31,.13)}
-#world .box{border:0;min-height:170px;background:rgba(255,255,255,.34);padding:20px;justify-content:flex-start}
-#world .box:first-child{background:rgba(79,111,104,.09)}
-#world .box:last-child{background:rgba(176,54,47,.08)}
-#world .box h3{font-size:9px;letter-spacing:.18em;margin-bottom:auto;color:rgba(51,39,31,.5)}
-#world .box p{font-size:13px;line-height:1.8;max-width:28em}
-#world .stages{border:0;background:linear-gradient(90deg,rgba(79,111,104,.08),rgba(255,255,255,.18) 45%,rgba(176,54,47,.10));overflow:hidden}
-#world .stages::before{display:none}
-#world .stage{grid-template-columns:125px 1fr;padding:20px 16px;border-bottom:1px solid rgba(51,39,31,.13)}
-#world .stage b{font-size:25px;font-weight:400;letter-spacing:-.05em;line-height:1}
-#world .stage span{font-size:14px;color:rgba(51,39,31,.68);align-self:center}
-#world > .wrap > p:not(.lead){font-size:12px;line-height:1.95;color:rgba(51,39,31,.58);max-width:65em}
-
-/* HAVEN / SHELTER — cool, institutional, image-led */
-#haven{background:#dfe5e2;color:var(--haven-ink);padding-top:78px;padding-bottom:88px}
-#haven .editorial-head{border-bottom-color:rgba(38,49,47,.18)}
-#haven .section-index,#haven .kicker{color:rgba(38,49,47,.46)}
-#haven .lead{font-size:13px;color:var(--haven-muted);max-width:62em;margin-bottom:28px}
-#haven .player{border-color:rgba(38,49,47,.17);background:rgba(255,255,255,.28);margin-bottom:20px}
-#haven .banner{border:0;margin:0 0 26px;position:relative}
-#haven .banner img{height:clamp(120px,26vw,190px);filter:saturate(.72) contrast(.96);object-position:center}
-#haven .banner figcaption{position:absolute;left:12px;bottom:10px;background:rgba(223,229,226,.82);color:rgba(38,49,47,.55);padding:5px 8px;border:0;font-size:8px}
-#haven > .wrap > p:not(.lead){font-size:12.5px;color:rgba(38,49,47,.68);max-width:64em;line-height:1.9;margin:0 0 34px}
-#haven .person{grid-template-columns:92px 1fr;padding:20px 0;border-bottom:1px solid rgba(38,49,47,.13)}
-#haven .person.lead-figure{border-left:2px solid #4f6f68;padding-left:15px}
-#haven .portrait{border-color:rgba(38,49,47,.16);background:#d4ddda}
-#haven .person .nm b{font-size:16px;color:#26312f}
-#haven .person .nm em{color:rgba(38,49,47,.44)}
-#haven .person p{font-size:14px;line-height:1.85;color:rgba(38,49,47,.68)}
-#haven .quote{border-left-color:#4f6f68;color:#31443f;font-size:15px;margin:26px 0 32px;padding-left:16px}
-#haven .card-list{margin-top:34px;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(38,49,47,.13);border:1px solid rgba(38,49,47,.13)}
-#haven .card{border:0;background:rgba(255,255,255,.28);min-height:145px;padding:17px}
-#haven .card b{font-size:9px;letter-spacing:.16em;color:rgba(38,49,47,.56)}
-#haven .card span{font-size:13px;line-height:1.8;color:rgba(38,49,47,.63)}
-#haven .banner + p + .person{margin-top:8px}
-
-/* global image / rhythm refinements */
-.banner img{transition:filter .25s,transform .5s}
-.banner:hover img{transform:scale(1.01)}
-@media(min-width:761px){
-  #haven .person{grid-template-columns:84px 1fr}
-  #haven .person:not(.lead-figure) .portrait{aspect-ratio:1/1}
-}
-@media(max-width:760px){
-  .editorial-head{align-items:flex-start}
-  .section-index{padding-top:5px}
-  #quiz .quiz-card{grid-template-columns:1fr;gap:26px}
-  #quiz .result{border-left:0;border-top:1px solid rgba(51,39,31,.14);padding:24px 0 0}
-  #world .stage{grid-template-columns:78px 1fr}
-  #haven .card-list{grid-template-columns:1fr 1fr}
-}
-@media(max-width:520px){
-  .editorial-head{display:block}
-  .section-index{margin-top:10px}
-  #profile .tabs button{min-width:0;margin-right:12px;padding-right:12px}
-  #haven .card-list{grid-template-columns:1fr}
-  #haven .person{grid-template-columns:70px 1fr;gap:13px}
-}
-</style>
 
 </body>
 </html>
