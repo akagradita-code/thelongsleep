@@ -210,7 +210,7 @@ header{min-height:56vh;padding:74px 0 44px}
 #quiz .wrap{max-width:1120px}
 #quiz .lead,#profile .lead,#world .lead,#haven .lead{max-width:48em}
 .quiz-card{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(250px,.75fr);gap:34px;align-items:start;padding:28px;background:rgba(251,246,241,.72)}
-.quiz-card #stage{min-width:0}
+.quiz-card #stage{min-width:0;min-height:330px}
 .quiz-card .result{min-width:0;border-left:1px solid var(--line-soft);padding-left:28px}
 .quiz-card .result.show{display:block}
 @media(max-width:760px){.quiz-card{display:block}.quiz-card .result{border-left:0;border-top:1px solid var(--line-soft);padding:24px 0 0;margin-top:26px}}
@@ -235,6 +235,7 @@ header{min-height:56vh;padding:74px 0 44px}
 
 /* ROSE GARDEN */
 #garden{padding-top:54px;padding-bottom:60px;background:radial-gradient(ellipse at 82% 8%,rgba(169,74,64,.22),transparent 34%),radial-gradient(ellipse at 12% 90%,rgba(99,77,68,.16),transparent 38%),linear-gradient(145deg,#3b2927,#241b1b)}
+#garden .h2{color:#fff}
 #garden .kicker{color:#fff}
 #garden .section-index{color:#fff}
 #garden .garden-lead{color:#fff;max-width:50em}
@@ -308,7 +309,7 @@ footer{padding:24px 0 32px}
 #quiz{background:#f1e8df;padding-top:52px;padding-bottom:56px}
 #quiz .lead{font-size:13.5px;color:var(--front-muted);max-width:60em;margin-bottom:18px}
 #quiz .player{background:rgba(255,255,255,.34);border-color:rgba(51,39,31,.16);margin-bottom:20px}
-#quiz .quiz-card{border:0;border-top:1px solid rgba(51,39,31,.18);border-bottom:1px solid rgba(51,39,31,.18);background:transparent;padding:24px 0 0;grid-template-columns:minmax(0,1fr) 340px;gap:46px}
+#quiz .quiz-card{border:0;border-top:1px solid rgba(51,39,31,.18);background:transparent;padding:24px 0 0;grid-template-columns:minmax(0,1fr) 340px;gap:46px}
 #quiz .qcount{font-size:11px;letter-spacing:.2em}
 #quiz .qbar{height:1px;margin:0 0 20px;background:rgba(51,39,31,.18)}
 #quiz .qbar i{background:#9c5a4e}
@@ -317,7 +318,8 @@ footer{padding:24px 0 32px}
 #quiz .opt{border:0;border-bottom:1px solid rgba(51,39,31,.12);border-left:0;background:transparent;padding:13px 6px 13px 0;font-size:13.5px;position:relative}
 #quiz .opt::before{content:'→';display:inline-block;width:26px;color:#9c5a4e;opacity:.7}
 #quiz .opt:hover,#quiz .opt:focus-visible{background:rgba(255,255,255,.28);padding-left:8px}
-#quiz .result{border-left:1px solid rgba(51,39,31,.14);padding-left:28px}
+#quiz .result{border-left:1px solid rgba(51,39,31,.14);padding-left:28px;min-height:330px}
+#quiz .opts{min-height:118px}
 .scale-legend{margin:0 0 14px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--front-muted)}
 #quiz .scale{height:7px;border:0;margin:18px 0 15px;gap:2px;background:transparent}
 #quiz .scale span{font-size:0;height:7px}
@@ -392,7 +394,8 @@ footer{padding:24px 0 32px}
   .editorial-head{align-items:flex-start}
   .section-index{padding-top:5px}
   #quiz .quiz-card{grid-template-columns:1fr;gap:26px}
-  #quiz .result{border-left:0;border-top:1px solid rgba(51,39,31,.14);padding:24px 0 0}
+  #quiz .result{border-left:0;border-top:1px solid rgba(51,39,31,.14);padding:24px 0 0;min-height:0}
+  .quiz-card #stage{min-height:300px}
   #world .stage{grid-template-columns:78px 1fr}
   #haven .card-list{grid-template-columns:1fr 1fr}
 }
@@ -454,7 +457,7 @@ footer{padding:24px 0 32px}
       <p id="rdesc"></p>
       <dl class="assign">
         <dt>배정</dt><dd id="rrole"></dd>
-        <dt>첫 장면</dt><dd id="rscene"></dd>
+        <dt>단편</dt><dd id="rscene"></dd>
         <dt>주의</dt><dd id="rwarn"></dd>
       </dl>
       <button class="again" id="fill">판정 결과로 양식 채우기</button>
@@ -702,16 +705,63 @@ const QS=[
      {t:"판이 뒤집히는 순간에 제일 가까이 서 있는다.",h:0,r:2,role:"gambler"}]}
 ];
 const ROLES={
- scout:{n:"정찰조 후보",s:"차고. 딘 아버클이 당신의 신발을 먼저 본다.",w:"지상은 낮에 숨이 마르고 밤에 뼈가 시리다. 물 계산을 틀리지 말 것."},
- medic:{n:"의료 보조",s:"의료실. 마야 코르테스가 소독약 냄새 속에서 당신을 부른다.",w:"격리실 명단에 아는 이름이 올라오는 날이 온다."},
- supply:{n:"보급 인원",s:"배급소. 로레인 벅이 계량 저울 너머로 당신을 셈한다.",w:"숫자를 맞추는 일은 누군가의 몫을 줄이는 일이기도 하다."},
- drifter:{n:"무소속",s:"해치 앞. 문은 안쪽에서만 열린다.",w:"숨긴 것이 있다면, 이 셸터에서 그것이 가장 무거운 죄다."},
- gambler:{n:"장부에 오른 이름",s:"발코니 관람석. 아래에서 모래 냄새가 올라온다.",w:"빌린 것은 물 한 컵이라도 적힌다. 갚는 방법은 두 가지뿐이다."},
- fighter:{n:"더 핏의 선수",s:"우리 안. 경기 순서를 기다리는 자리다.",w:"여왕을 지루하게 만든 사람은 다음 경기에 이름이 오른다."}
+ scout:{n:"정찰조 후보",
+  s:["차고. 딘 아버클이 당신의 신발부터 내려다본다.",
+     "해치 앞 대기선. 오늘 나가는 조에 한 자리가 비었다.",
+     "지도가 붙은 벽 앞. 아직 아무도 밟지 않은 구역에 표시가 하나 늘었다."],
+  w:["지상은 낮에 숨이 마르고 밤에 뼈가 시리다. 물 계산을 틀리지 말 것.",
+     "돌아오지 못한 조의 이름은 지워지지 않는다. 명단에 그대로 남는다."]},
+ medic:{n:"의료 보조",
+  s:["의료실. 마야 코르테스가 소독약 냄새 속에서 당신을 부른다.",
+     "격리실 복도. 오늘 명단에 한 명이 추가됐다.",
+     "침상 옆. 열이 오른 사람의 손을 잡아 두라는 지시를 받았다."],
+  w:["격리실 명단에 아는 이름이 올라오는 날이 온다.",
+     "끝까지 환자로 보려는 사람과 결정을 내려야 하는 사람은 늘 부딪힌다."]},
+ supply:{n:"보급 인원",
+  s:["배급소. 로레인 벅이 계량 저울 너머로 당신을 셈한다.",
+     "정수실. 오늘 배급량이 어제보다 줄었고 이유는 설명되지 않았다.",
+     "창고 장부 앞. 숫자 하나가 맞지 않는다."],
+  w:["숫자를 맞추는 일은 누군가의 몫을 줄이는 일이기도 하다.",
+     "제 몫을 못 하는 사람을 내보내자는 말이 나올 때, 당신도 그 자리에 있다."]},
+ drifter:{n:"무소속",
+  s:["해치 앞. 문은 안쪽에서만 열린다.",
+     "거주 구역 끝자리. 아무도 당신의 이름을 아직 외우지 않았다.",
+     "반입 검사대. 가방을 열라는 말을 들었다."],
+  w:["숨긴 것이 있다면, 이 셸터에서 그것이 가장 무거운 죄다.",
+     "역할이 없는 사람의 배급은 가장 먼저 검토 대상이 된다."]},
+ gambler:{n:"장부에 오른 이름",
+  s:["발코니 관람석. 아래에서 모래 냄새가 올라온다.",
+     "거래소 천막. 물 한 통 값이 어제의 두 배가 됐다.",
+     "장부 앞. 당신 이름 옆의 숫자를 여왕이 손톱으로 짚는다."],
+  w:["빌린 것은 물 한 컵이라도 적힌다. 갚는 방법은 두 가지뿐이다.",
+     "관중석에 오래 앉아 있던 사람이 다음 경기에 불려 나가기도 한다."]},
+ fighter:{n:"더 핏의 선수",
+  s:["우리 안. 경기 순서를 기다리는 자리다.",
+     "모래 위. 내려온 계단은 이미 접혀 올라갔다.",
+     "경기 전 대기실. 굶긴 지 하루째고, 그것도 계산에 들어 있다."],
+  w:["여왕을 지루하게 만든 사람은 다음 경기에 이름이 오른다.",
+     "이겨도 끝나지 않는다. 이긴 사람에게는 다음 상대가 붙는다."]}
+};
+const VERDICT={
+ h3:[["문이 안쪽에서 열린다.","당신은 규칙이 사람을 살린다고 믿는 쪽이다. 엘라이어스는 영웅이 되라고 하지 않는다. 살아남아 돌아오라고 할 뿐이다."],
+     ["명단에 이름이 올라간다.","망설임 없이 셸터 쪽이다. 당신 같은 사람이 있어서 이 지하가 아직 굴러간다. 대신 그만큼 빨리 닳는다."]],
+ h2:[["배급표를 받는다.","규칙을 믿지만 맹신하지는 않는다. 이 셸터에서 가장 오래 버티는 것은 대체로 그런 사람이다."],
+     ["당신 자리가 정해진다.","셸터의 방식이 몸에 맞는다. 다만 문 밖이 궁금해지는 날이 반드시 온다."]],
+ h1:[["일단은 안쪽에 선다.","셸터 쪽으로 반걸음 기울어 있다. 규칙을 지키되 그것이 옳아서는 아니다. 지금은 그게 유리하기 때문이다."],
+     ["문턱을 넘긴 했다.","안에 있지만 완전히 속하지는 않았다. 엘라이어스도 그걸 알고 당신을 지켜본다."]],
+ mid:[["두 불빛 사이에 서 있다.","어느 쪽도 당신을 완전히 붙들지 못했다. 사막에서 가장 오래 사는 유형이거나, 가장 빨리 죽는 유형이다."],
+      ["아직 아무 데도 속하지 않았다.","양쪽 다 당신을 필요로 하고, 양쪽 다 당신을 믿지 않는다. 그 상태로 꽤 멀리 갈 수 있다."]],
+ r1:[["협곡 쪽으로 기운다.","규칙보다 판을 믿는다. 아직 장부에 이름은 없지만, 불빛을 보러 간 사람은 대개 다시 간다."],
+     ["한 발은 모래 위에 있다.","셸터의 셈법이 답답하다. 그 답답함이 당신을 협곡으로 데려갈 것이다."]],
+ r2:[["장부에 이름이 올라간다.","스칼렛은 당신을 구하지 않는다. 얼마나 재미있는지 볼 뿐이다."],
+     ["여왕이 당신을 기억한다.","이름을 새로 붙일 만한지 가늠하는 눈이다. 그 눈에 든 사람은 오래 못 가거나, 아주 오래 간다."]],
+ r3:[["여왕이 박수를 친다.","완전히 협곡 쪽이다. 규칙을 버린 것이 아니라, 처음부터 필요 없었던 사람이다."],
+     ["다음 경기 카드에 오른다.","당신은 관중이 보고 싶어 하는 얼굴을 갖고 있다. 그게 이곳에서 가장 비싸고 가장 위험한 자산이다."]]
 };
 let qi=0,H=0,R=0,roles={};
 let lastTop=null;
 const $=s=>document.querySelector(s);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
 function render(){
   const q=QS[qi];
   $("#qcount").textContent="질문 "+(qi+1)+" / "+QS.length;
@@ -735,16 +785,18 @@ function finish(){
   $("#scale").setAttribute("aria-label","HAVEN "+ph+"퍼센트, ROSE GARDEN "+pr+"퍼센트");
   $("#scaleText").textContent="HAVEN "+ph+"% · ROSE GARDEN "+pr+"%";
   const top=Object.keys(roles).sort((a,b)=>roles[b]-roles[a])[0];
-  const havenSide=ph>=pr;
   const role=ROLES[top];
-  if(ph>=65){$("#verdict").textContent="문이 안쪽에서 열린다.";
-    $("#rdesc").textContent="당신은 규칙이 사람을 살린다고 믿는 쪽이다. 엘라이어스는 당신에게 영웅이 되라고 하지 않을 것이다. 살아남아 돌아오라고 할 뿐이다.";}
-  else if(pr>=65){$("#verdict").textContent="장부에 이름이 올라간다.";
-    $("#rdesc").textContent="당신은 규칙보다 판을 믿는 쪽이다. 스칼렛은 당신을 구하지 않는다. 얼마나 재미있는지 볼 뿐이다.";}
-  else{$("#verdict").textContent="두 불빛 사이에 서 있다.";
-    $("#rdesc").textContent=(havenSide?"셸터 쪽으로 반걸음 기울었지만":"협곡 쪽으로 반걸음 기울었지만")+", 어느 쪽도 당신을 완전히 붙들지 못했다. 사막에서 가장 오래 사는 유형이거나, 가장 빨리 죽는 유형이다.";}
+  let band;
+  if(ph>=88)band="h3";else if(ph>=68)band="h2";else if(ph>=56)band="h1";
+  else if(pr>=88)band="r3";else if(pr>=68)band="r2";else if(pr>=56)band="r1";
+  else band="mid";
+  const v=pick(VERDICT[band]);
+  $("#verdict").textContent=v[0];
+  $("#rdesc").textContent=v[1];
   lastTop=top;
-  $("#rrole").textContent=role.n;$("#rscene").textContent=role.s;$("#rwarn").textContent=role.w;
+  $("#rrole").textContent=role.n;
+  $("#rscene").textContent=pick(role.s);
+  $("#rwarn").textContent=pick(role.w);
   try{localStorage.setItem("tls-result",JSON.stringify({ph:ph,role:top}));}catch(e){}
 }
 $("#again").onclick=()=>{qi=0;H=0;R=0;roles={};$("#result").classList.remove("show");$("#stage").style.display="";render();};
@@ -784,23 +836,40 @@ document.querySelectorAll(".player").forEach(p=>{
 
 /* ---------------- 판정 결과 → 양식 ---------------- */
 const FILL={
- scout:{side:"h",role:"정찰",rel:"딘 아버클의 정찰조. 상관과 부하"},
- medic:{side:"h",role:"의료 보조",rel:"마야 코르테스를 돕는 사이"},
- supply:{side:"h",role:"배급",rel:"로레인 벅 아래 보급 인원"},
- drifter:{side:"h",role:"없음",rel:"어제 실려 온 낯선 사람"},
- gambler:{side:"r",role:"손님",rel:"장부에 이름이 오른 빚쟁이",debt:"잃은 판돈과 마신 물. 아직 갚는 중"},
- fighter:{side:"r",role:"선수",rel:"여왕이 고른 사람",debt:"경기로 갚는 중. 이기면 줄고 지면 늘어난다"}
+ scout:{side:"h",
+   h:{role:"정찰",rel:"딘 아버클의 정찰조. 상관과 부하"},
+   r:{role:"손님",rel:"협곡 지리를 아는 외지인",debt:"길 안내 값으로 받은 물. 아직 갚지 않았다"}},
+ medic:{side:"h",
+   h:{role:"의료 보조",rel:"마야 코르테스를 돕는 사이"},
+   r:{role:"일꾼",rel:"선수들의 상처를 꿰매 주는 사람",debt:"약값. 경기가 있는 날마다 늘어난다"}},
+ supply:{side:"h",
+   h:{role:"배급",rel:"로레인 벅 아래 보급 인원"},
+   r:{role:"일꾼",rel:"물 창고에서 일하는 얼굴 없는 인원",debt:"창고에서 축낸 몫. 장부에 매일 적힌다"}},
+ drifter:{side:"h",
+   h:{role:"없음",rel:"어제 실려 온 낯선 사람"},
+   r:{role:"없음",rel:"아직 아무에게도 불리지 않은 이름",debt:"마신 물 한 컵. 그것부터 시작이다"}},
+ gambler:{side:"r",
+   h:{role:"없음",rel:"셸터에서는 조용히 지내는 편"},
+   r:{role:"손님",rel:"장부에 이름이 오른 빚쟁이",debt:"잃은 판돈과 마신 물. 아직 갚는 중"}},
+ fighter:{side:"r",
+   h:{role:"정찰",rel:"엘라이어스가 아직 판단을 미룬 사람"},
+   r:{role:"선수",rel:"여왕이 고른 사람",debt:"경기로 갚는 중. 이기면 줄고 지면 늘어난다"}}
 };
 document.getElementById("fill").onclick=()=>{
   if(!lastTop)return;
   const f=FILL[lastTop];
+  const apply=(id,vals)=>{
+    const sheet=document.getElementById(id);
+    Object.keys(vals).forEach(k=>{
+      const el=sheet.querySelector('[data-f="'+k+'"]');
+      if(el&&vals[k]){el.textContent=vals[k];el.classList.add("filled");}
+    });
+  };
+  apply("sheet-h",f.h);
+  apply("sheet-r",f.r);
   document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.sheet===f.side));
   document.getElementById("sheet-h").classList.toggle("hidden",f.side!=="h");
   document.getElementById("sheet-r").classList.toggle("hidden",f.side!=="r");
-  const sheet=document.getElementById(f.side==="h"?"sheet-h":"sheet-r");
-  /* 수정: 채워진 칸에 filled 표시 */
-  const set=(k,v)=>{const el=sheet.querySelector('[data-f="'+k+'"]');if(el&&v){el.textContent=v;el.classList.add("filled");}};
-  set("role",f.role);set("rel",f.rel);set("debt",f.debt);
   document.getElementById("profile").scrollIntoView({behavior:"smooth",block:"start"});
 };
 
@@ -842,7 +911,7 @@ const POOL={
    "물을 들고 찾아와 교환을 요구했고, 그대로 눌러앉았다.","격리실에서 나온 지 두 달 됐다."],
  joinR:["빚을 지고 협곡에 남았다.","물을 사러 왔다가 장부에 이름이 올랐다.",
    "사막에서 붙잡혀 우리에 들어갔다.","제 발로 걸어 들어와 일자리를 달라고 했다.",
-   "여왕의 눈에 띄어 이름을 새로 받았다.","앞선 주인이 넘긴 빚과 함께 딸려 왔다."],
+   "여왕의 눈에 띄어 이름을 새로 받았다.","전 주인이 떠넘긴 빚과 함께 팔려 왔다."],
  roleH:["정찰","의료 보조","정비","배급","없음"],
  roleR:["선수","손님","일꾼","포로","없음"],
  inf:["비감염","비감염","감염자","감염자","면역자"],
@@ -867,10 +936,9 @@ const POOL={
    "다 쓴 립스틱.","아이 크기의 장갑 한 짝.","붕괴 전 라디오. 전원은 들어오지 않는다.",
    "표지가 떨어진 문고본.","한 알 남은 약병."],
  debt:["물 40리터. 갚는 중.","받은 치료비. 경기 두 번으로 정산하기로 했다.",
-   "잃은 판돈. 액수는 여왕만 안다.","앞사람이 넘긴 빚. 이유는 듣지 못했다.",
+   "잃은 판돈. 액수는 여왕만 안다.","죽은 사람 몫까지 떠안았다. 이유는 듣지 못했다.",
    "우리에서 먹은 빵값. 하루치씩 늘어난다.","갚았다고 들었지만 장부에는 아직 남아 있다."]
 };
-const pick=a=>a[Math.floor(Math.random()*a.length)];
 function randomize(side){
   const sheet=document.getElementById(side==="h"?"sheet-h":"sheet-r");
   const inf=pick(POOL.inf);
