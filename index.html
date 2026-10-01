@@ -9,7 +9,7 @@
 <meta property="og:title" content="THE LONG SLEEP">
 <meta property="og:description" content="당신은 어느 쪽 불빛으로 걸어갈 것인가.">
 <!-- 1200x630 전용 이미지를 만들어 교체하면 트위터 카드에서 잘리지 않습니다 -->
-<meta property="og:image" content="https://thelongsleep.vercel.app/assets/image_07_e0f162616d.jpg">
+<meta property="og:image" content="https://thelongsleep.vercel.app/assets/image_06_e7185bdfbb.jpg">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="320">
 <meta property="og:url" content="https://thelongsleep.vercel.app/">
@@ -341,8 +341,13 @@ footer{padding:24px 0 32px}
 #profile .sheet{border:0;background:transparent;padding:26px 0 0;position:relative}
 #profile .sheet pre{font-size:13.5px;line-height:2.05;color:#3f332c;max-width:760px}
 /* 수정: 안내 문구는 흐리게, 채워진 값만 진하게 */
-#profile .sheet pre span[data-f]{color:rgba(51,39,31,.42)}
-#profile .sheet pre span[data-f].filled{color:#9c5a4e}
+#profile .sheet pre span[data-f]{
+  color:#9c5a4e;display:inline-block;min-width:3em;padding:0 3px;
+  border-bottom:1px dashed rgba(51,39,31,.22);cursor:text;outline:none;
+}
+#profile .sheet pre span[data-f]:empty::before{content:attr(data-ph);color:rgba(51,39,31,.38)}
+#profile .sheet pre span[data-f]:hover{background:rgba(156,90,78,.07)}
+#profile .sheet pre span[data-f]:focus{background:rgba(156,90,78,.1);border-bottom-style:solid;border-bottom-color:#9c5a4e}
 #profile .sheet .copy,#profile .sheet .dice{border:1px solid rgba(51,39,31,.2);background:transparent;margin-top:22px;padding:8px 13px;font-size:11px;letter-spacing:.14em}
 #profile .sheet .dice{background:#33271f;color:#f4ece4;border-color:#33271f}
 
@@ -468,7 +473,7 @@ footer{padding:24px 0 32px}
 
 <section id="profile"><div class="wrap">
   <div class="editorial-head"><div><p class="kicker">CHARACTER SHEET</p><h2 class="h2">당신을 적어 넣는 칸</h2></div><p class="section-index">02 / IDENTITY</p></div>
-  <p class="lead">유저 프로필로 붙여 넣고 시작할 수 있습니다.</p>
+  <p class="lead">칸을 눌러 직접 적거나, 랜덤 배정으로 채운 뒤 복사해 쓰세요.</p>
 
   <div class="tabs" role="tablist">
     <button role="tab" id="tab-h" aria-controls="sheet-h" aria-selected="true" data-sheet="h">HAVEN</button>
@@ -476,34 +481,34 @@ footer{padding:24px 0 32px}
   </div>
 
   <div class="sheet" id="sheet-h" role="tabpanel" aria-labelledby="tab-h">
-<pre>[이름] <span data-f="name"></span>
-[나이] <span data-f="age"></span>
-[외형] <span data-f="look">한두 줄. 눈에 띄는 특징 위주</span>
-[합류] <span data-f="join">HAVEN에 들어온 시점과 경위</span>
-[역할] <span data-f="role">정찰 / 의료 보조 / 정비 / 배급 / 없음</span>
-[감염] <span data-f="inf">비감염 · 감염자 · 면역자 중 택1</span>
-[징후] <span data-f="sign">감염자라면 겉으로 드러나는 증상</span>
-[숨기는 것] <span data-f="hide">셸터에 말하지 않은 사실</span>
-[거리감] <span data-f="rel">주요 인물과의 현재 관계. 상관과 부하 / 오래된 동료 / 어제 실려 온 낯선 사람</span>
-[할 수 있는 것] <span data-f="skill">총기 / 기계 / 응급처치 / 운전 / 협상</span>
-[지니고 있는 것] <span data-f="item">붕괴 이전부터 버리지 못한 물건 하나</span></pre>
+<pre>[이름] <span data-f="name" data-ph="이름" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[나이] <span data-f="age" data-ph="나이" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[외형] <span data-f="look" data-ph="한두 줄. 눈에 띄는 특징 위주" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[합류] <span data-f="join" data-ph="HAVEN에 들어온 시점과 경위" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[역할] <span data-f="role" data-ph="정찰 / 의료 보조 / 정비 / 배급 / 없음" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[감염] <span data-f="inf" data-ph="비감염 · 감염자 · 면역자 중 택1" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[징후] <span data-f="sign" data-ph="감염자라면 겉으로 드러나는 증상" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[숨기는 것] <span data-f="hide" data-ph="셸터에 말하지 않은 사실" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[거리감] <span data-f="rel" data-ph="주요 인물과의 현재 관계. 상관과 부하 / 오래된 동료 / 어제 실려 온 낯선 사람" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[할 수 있는 것] <span data-f="skill" data-ph="총기 / 기계 / 응급처치 / 운전 / 협상" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[지니고 있는 것] <span data-f="item" data-ph="붕괴 이전부터 버리지 못한 물건 하나" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span></pre>
     <button class="copy" data-target="sheet-h">양식 복사</button>
     <button class="copy dice" data-target="sheet-h" data-side="h">랜덤 배정</button>
   </div>
 
   <div class="sheet hidden" id="sheet-r" role="tabpanel" aria-labelledby="tab-r">
-<pre>[이름] <span data-f="name"></span>
-[나이] <span data-f="age"></span>
-[외형] <span data-f="look">한두 줄. 눈에 띄는 특징 위주</span>
-[합류] <span data-f="join">로즈가든에 들어온 시점과 경위</span>
-[역할] <span data-f="role">선수 / 손님 / 일꾼 / 포로 / 없음</span>
-[감염] <span data-f="inf">비감염 · 감염자 · 면역자 중 택1</span>
-[징후] <span data-f="sign">감염자라면 겉으로 드러나는 증상</span>
-[숨기는 것] <span data-f="hide">협곡에서 말하지 않은 사실</span>
-[거리감] <span data-f="rel">주요 인물과의 현재 관계. 여왕의 눈에 든 사람 / 빚쟁이 / 어제 끌려온 낯선 사람</span>
-[할 수 있는 것] <span data-f="skill">총기 / 기계 / 응급처치 / 운전 / 협상</span>
-[지니고 있는 것] <span data-f="item">붕괴 이전부터 버리지 못한 물건 하나</span>
-[로즈가든의 빚] <span data-f="debt">여기서 살아남으며 장부에 적힌 것. 마신 물, 받은 치료, 잃은 판돈</span></pre>
+<pre>[이름] <span data-f="name" data-ph="이름" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[나이] <span data-f="age" data-ph="나이" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[외형] <span data-f="look" data-ph="한두 줄. 눈에 띄는 특징 위주" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[합류] <span data-f="join" data-ph="로즈가든에 들어온 시점과 경위" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[역할] <span data-f="role" data-ph="선수 / 손님 / 일꾼 / 포로 / 없음" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[감염] <span data-f="inf" data-ph="비감염 · 감염자 · 면역자 중 택1" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[징후] <span data-f="sign" data-ph="감염자라면 겉으로 드러나는 증상" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[숨기는 것] <span data-f="hide" data-ph="협곡에서 말하지 않은 사실" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[거리감] <span data-f="rel" data-ph="주요 인물과의 현재 관계. 여왕의 눈에 든 사람 / 빚쟁이 / 어제 끌려온 낯선 사람" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[할 수 있는 것] <span data-f="skill" data-ph="총기 / 기계 / 응급처치 / 운전 / 협상" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[지니고 있는 것] <span data-f="item" data-ph="붕괴 이전부터 버리지 못한 물건 하나" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span>
+[로즈가든의 빚] <span data-f="debt" data-ph="여기서 살아남으며 장부에 적힌 것. 마신 물, 받은 치료, 잃은 판돈" contenteditable="plaintext-only" role="textbox" spellcheck="false"></span></pre>
     <button class="copy" data-target="sheet-r">양식 복사</button>
     <button class="copy dice" data-target="sheet-r" data-side="r">랜덤 배정</button>
   </div>
@@ -862,7 +867,7 @@ document.getElementById("fill").onclick=()=>{
     const sheet=document.getElementById(id);
     Object.keys(vals).forEach(k=>{
       const el=sheet.querySelector('[data-f="'+k+'"]');
-      if(el&&vals[k]){el.textContent=vals[k];el.classList.add("filled");}
+      if(el&&vals[k]){el.textContent=vals[k];}
     });
   };
   apply("sheet-h",f.h);
@@ -884,7 +889,7 @@ document.querySelectorAll(".tabs button").forEach(b=>{
 document.querySelectorAll(".copy:not(.dice)").forEach(b=>{
   b.onclick=async()=>{
     const pre=document.getElementById(b.dataset.target).querySelector("pre");
-    const text=pre.innerText;
+    const text=pre.cloneNode(true).textContent.replace(/[ \t]+$/gm,"");
     try{await navigator.clipboard.writeText(text);b.textContent="복사됨";}
     catch(e){
       const t=document.createElement("textarea");t.value=text;document.body.appendChild(t);
@@ -893,6 +898,16 @@ document.querySelectorAll(".copy:not(.dice)").forEach(b=>{
     }
     setTimeout(()=>b.textContent="양식 복사",1800);
   };
+});
+
+/* ---------------- 양식 직접 입력 ---------------- */
+document.querySelectorAll('[data-f][contenteditable]').forEach(el=>{
+  el.addEventListener("keydown",e=>{ if(e.key==="Enter"){e.preventDefault();el.blur();} });
+  el.addEventListener("paste",e=>{
+    e.preventDefault();
+    const t=(e.clipboardData||window.clipboardData).getData("text").replace(/\s+/g," ").trim();
+    document.execCommand("insertText",false,t);
+  });
 });
 
 /* ---------------- 랜덤 배정 ---------------- */
@@ -960,7 +975,7 @@ function randomize(side){
   /* 수정: 채워진 칸에 filled 표시 */
   Object.keys(v).forEach(k=>{
     const el=sheet.querySelector('[data-f="'+k+'"]');
-    if(el){el.textContent=v[k];el.classList.add("filled");}
+    if(el){el.textContent=v[k];}
   });
 }
 document.querySelectorAll(".dice").forEach(b=>{
